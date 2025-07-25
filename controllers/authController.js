@@ -15,8 +15,9 @@ exports.register = async (req, res) => {
         const token = generateToken(user._id);
         res.status(201).json({ _id: user._id, username, email, role, token });
     } catch (err) {
-        res.status(500).json({ message: 'Registration failed' });
-    }
+        console.error('Registration error:', err);
+        res.status(500).json({ message: 'Registration failed', error: err.message });
+        }
 };
 
 exports.login = async (req, res) => {
@@ -30,6 +31,7 @@ exports.login = async (req, res) => {
             res.status(401).json({ message: 'Invalid credentials' });
         }
     } catch (err) {
-        res.status(500).json({ message: 'Login failed' });
-    }
+        console.error('Login error:', err);
+        res.status(500).json({ message: 'Login failed', error: err.message });
+        }
 };
