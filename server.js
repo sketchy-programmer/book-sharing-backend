@@ -33,6 +33,10 @@ app.use('/api/notifications', notificationRoutes);
 
 app.use(errorHandler);
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Book Sharing Project API');
+});
+
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         server.listen(process.env.PORT || 5000, () => console.log('Server running...'));
