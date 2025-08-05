@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { register, login } = require('../controllers/authController');
 
-router.post('/register', register);
-router.post('/login', login);
+router.post('/register', registerUser);
+router.post('/login', loginUser);
 
 module.exports = router;
 
@@ -11,6 +11,7 @@ module.exports = router;
 // ===== backend/middlewares/authMiddleware.js =====
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const { registerUser, loginUser } = require('../../frontend/src/services/auth');
 
 exports.protect = async (req, res, next) => {
     let token;
