@@ -11,7 +11,7 @@ module.exports = router;
 // ===== backend/middlewares/authMiddleware.js =====
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-const { registerUser, loginUser } = require('../../frontend/src/services/auth');
+const { validateEmail, validatePassword } = require('../utils/authHelpers.js');
 
 exports.protect = async (req, res, next) => {
     let token;

@@ -22,9 +22,6 @@ setupSocket(io);
 
 app.use(cors({
     origin: 'https://book-sharing-project-8vi5.vercel.app', // Update with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    exposedHeaders: ['Content-Disposition'],
     credentials: true,
 }));
 app.use(express.json());
