@@ -21,7 +21,7 @@ const io = new Server(server, { cors: { origin: '*' } });
 setupSocket(io);
 
 app.use(cors({
-    origin: 'https://book-sharing-project-8vi5-ikqu8fv8l.vercel.app', // Update with your frontend URL
+    origin: 'book-sharing-project-8vi5.vercel.app', // Update with your frontend URL
     credentials: true,
 }));
 app.use(express.json());
